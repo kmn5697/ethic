@@ -1,0 +1,14 @@
+{
+    "1753715576": {
+        "student_id": "20250115",
+        "student_name": "김미나",
+        "real": "uploaded_images/real/1753715576_20250115_김미나_real.jpg",
+        "fake": "uploaded_images/fake/1753715576_20250115_김미나_fake.jpg",
+        "comments": [],
+        "hearts": 5,
+        "show_comment_box": false,
+        "show_comments": false,
+        "show_comment_input": false,
+        "show_comment_box_2": false
+    }
+}
