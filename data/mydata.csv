@@ -1,0 +1,22 @@
+import os
+import numpy as np
+from PIL import Image
+import pandas as pd
+
+os.makedirs('sample_images', exist_ok=True)
+labels = []
+for i in range(1, 6):
+    # Real 이미지 (노이즈 패턴)
+    img = Image.fromarray(np.random.randint(200, 255, (64,64,3), dtype=np.uint8))
+    img.save(f"sample_images/real_{i:02d}.jpg")
+    labels.append({'filename': f"real_{i:02d}.jpg", 'label': 'Real'})
+
+for i in range(1, 6):
+    # Fake 이미지 (딥페이크 패턴 시뮬레이션)
+    img = Image.fromarray(np.random.randint(0, 120, (64,64,3), dtype=np.uint8))
+    img.save(f"sample_images/fake_{i:02d}.jpg")
+    labels.append({'filename': f"fake_{i:02d}.jpg", 'label': 'Fake'})
+
+df = pd.DataFrame(labels)
+df.to_csv('sample_images/labels.csv', index=False)
+print("샘플 데이터 생성 완료!")
